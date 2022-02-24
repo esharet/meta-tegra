@@ -8,7 +8,9 @@ LIC_FILES_CHKSUM = "file://nvbuf_utils.h;endline=9;md5=afc209f3955d083a93f5009bc
 TEGRA_SRC_SUBARCHIVE = "Linux_for_Tegra/source/public/gst-nvcompositor_src.tbz2"
 require recipes-bsp/tegra-sources/tegra-sources-32.5.2.inc
 
-DEPENDS = "gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-bad virtual/egl tegra-libraries"
+DEPENDS = "gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-bad virtual/egl tegra-libraries  "
+RDEPENDS_${PN} = "gstreamer1.0 libgstvideo-1.0 tegra-libraries libdrm"
+RDEPENDS_${PN}-nvcompositor = "gstreamer1.0 libgstbadbase-1.0 libgstbadvideo-1.0 libgstvideo-1.0 tegra-libraries"
 
 SRC_URI += " file://0001-Update-makefile-for-OE-builds.patch"
 S = "${WORKDIR}/gst-nvcompositor"
